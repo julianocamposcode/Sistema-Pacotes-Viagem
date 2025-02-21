@@ -1,0 +1,233 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+header {
+  background-color: #f4f6f8f8;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 1rem;
+}
+
+.menu-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 20px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.menu-list li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+nav img {
+  width: 3rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  margin-top: 2rem;
+  animation: animation-bottom 1s backwards;
+}
+
+.conteudo1 {
+  padding: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  animation: animation-apple1 1s backwards;
+}
+
+.dados {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.nome_pacote {
+  font-size: 30px;
+  margin-bottom: 1rem;
+}
+
+.dv_quantidade {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.mais,
+.menos {
+  background-color: white;
+  color: black;
+  width: 2rem;
+  height: 1.2rem;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.input_quantidade {
+  width: 55px;
+  height: 25px;
+  text-align: center;
+  outline: none;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+}
+
+.quantidade {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+.img_viagem_detalhe {
+  width: 30rem;
+  border-radius: 10px;
+  animation: animation-apple1 1s backwards;
+}
+
+.buton_buy {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+}
+
+.comprar {
+  display: flex;
+  width: 80%;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  background-color: #0076df;
+  cursor: pointer;
+}
+
+.comprar:hover {
+  background-color: #0077dfbd;
+}
+
+.loader_deta {
+  height: 3rem;
+  border-radius: 15px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+}
+.load {
+  width: 2rem;
+}
+.descricao {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 80%;
+  line-height: 140%;
+  font-size: 18px;
+  text-align: justify;
+  transition: 1s;
+}
+
+.sesao {
+  line-height: 160%;
+}
+.sub {
+  margin-top: 0.7rem;
+}
+.titulo {
+  font-size: 27px;
+}
+
+.linha {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+}
+.linha p {
+  font-size: 18px;
+}
+
+.frame {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .img_viagem_detalhe {
+    width: 20rem;
+    margin-top: 2rem;
+  }
+
+  .conteudo1 {
+    padding: 0;
+  }
+  .descricao {
+    margin-top: 4rem;
+  }
+
+  .nome_pacote {
+    font-size: 23px;
+  }
+
+  .comprar {
+    width: 100%;
+  }
+  .sub {
+    font-size: 16px;
+  }
+
+  .frame {
+   width: 20rem;
+   height: 20rem;
+  }
+}
+
+@keyframes animation-bottom {
+  0% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}

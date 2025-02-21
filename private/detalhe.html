@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes Viagem</title>
+    <link rel="stylesheet" href="./assets/detalhe.css" />
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/3527/3527264.png" type="image/x-icon">
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2-theme-bulma@11/bulma.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="menu">
+        <ul class="menu-list">
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+        <a href="/index.html">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/1085/1085493.png"
+            alt="logo"
+          />
+        </a>
+      </nav>
+    </header>
+
+    <section class="container">
+      <section class="main">
+        <section class="container">
+          <div class="conteudo1">
+            <div class="dados">
+              <p class="nome_pacote"></p>
+
+              <p>🗓️ Data de Partida: <span class="dataPartida"></span></p>
+              <p>🗓️ Duração: <span class="duracao"></span></p>
+              <p>📌 Local da Partida: <span class="partida">São Paulo</span></p>
+              <p>🎟️ Lugares Disponíveis: <span class="lugares">12</span></p>
+              <p>💵 Preço por pessoa: R$ <span class="preco"></span></p>
+
+              <div class="quantidade">
+                <p>💺 Lugares:</p>
+                <div class="dv_quantidade">
+                  <button class="menos" id="decrementar">-</button>
+                  <input
+                    type="text"
+                    id="quantidade"
+                    class="input_quantidade"
+                    value="0"
+                  />
+                  <button class="mais" id="incrementar">+</button>
+                </div>
+              </div>
+              <p>💰 Valor total: R$ <span class="calc"> 0.000 </span></p>
+            </div>
+            <div class="buton_buy">
+              <button class="comprar">
+                <p>Comprar</p>
+              </button>
+              <div class="loader loader_deta" style="display: none">
+                <img class="load" src="./assets/img/load.gif" alt="loag" />
+              </div>
+            </div>
+          </div>
+          <div class="conteudo2">
+            <img class="img_viagem_detalhe" src="" alt="imagem detalhe" />
+          </div>
+        </section>
+        <section class="descricao">
+          <div class="sesao">
+            <p class="titulo">Detalhes</p>
+            <div class="sub">
+              <p>
+                Transporte:
+                <span class="transp"></span>
+              </p>
+              <p>
+                Hospedagem:
+                <span class="hosp"></span>
+              </p>
+              <p>
+                Alimentação:
+                <span class="aliment"></span>
+              </p>
+              <p>
+                Passeios:
+                <span class="passeios"></span>
+              </p>
+            </div>
+          </div>
+          <div class="sesao">
+            <p class="titulo">Pagamento</p>
+            <div class="sub">
+              <p>
+                Condições de Pagamento:
+                <span class="pagament"></span>
+              </p>
+            </div>
+          </div>
+          <div class="sesao">
+            <p class="titulo">Descrição</p>
+            <div class="sub">
+              <p class="descricao_content"></p>
+            </div>
+          </div>
+          <iframe
+            class="frame"
+            width="600"
+            height="400"
+            src=""
+            title="Conheça 7 PASSEIOS imperdíveis em GRAMADO - RS"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </section>
+      </section>
+    </section>
+    <script src="./assets/buscar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  </body>
+</html>
