@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((data) => {
 
+
+
       let id = localStorage.getItem("id")
 
       const quantidade = document.getElementById('quantidade');
@@ -40,6 +42,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
+      const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+      function handleScreenSize(e) {
+        if (e.matches) {
+          if (data[id].nome == 'Pacote para Dubai, Emirados Árabes') {
+            data[id].nome = 'Pacote para Dubai, E. Árabes'
+          }
+        }
+      }
+
+      mediaQuery.addEventListener("change", handleScreenSize);
+      handleScreenSize(mediaQuery);
+
+
       selector('.nome_pacote').innerHTML = data[id].nome
       selector('.img_viagem_detalhe').src = data[id].src
       selector('.dataPartida').innerHTML = data[id].dataPartida
@@ -57,6 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
       selector('.descricao_content').innerHTML = data[id].descricao
       selector('.frame').src = data[id].frame
 
+
+      // botão comprar
+
     })
     .catch((error) => console.error("Erro ao carregar JSON:", error));
 });
@@ -70,6 +89,32 @@ buy.onclick = () => {
   setTimeout(() => {
     loader.style.display = 'none';
     buy.childNodes[1].textContent = 'Comprar'
+    if (quantidade.value == 0) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        },
+      });
+      Toast.fire({ icon: "error", title: "Nenhum lugar reservado!" });
+    } else {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        },
+      });
+      Toast.fire({ icon: "success", title: `${quantidade.value} Lugares reservados com sucesso!` });
+    }
   }, 1000);
-
 }
